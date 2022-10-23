@@ -41,15 +41,15 @@ contract Sliced is ERC20Burnable,Ownable,Pausable {
          sale = _sale;
 		uint nowDate = block.timestamp;
 		walletTokens[team] = WalletTokens((_supply*15)/100,((_supply*15)/100)/15,Vesting(0,0,12,15,3),nowDate+(12 * 30 days));
-		walletTokens[marketing] = WalletTokens((_supply*5)/100,((_supply*5)/100)/12,Vesting(0,0,3,12,3),nowDate+(3 * 30 days));
+		walletTokens[marketing] = WalletTokens((_supply*4)/100,((_supply*4)/100)/12,Vesting(0,0,3,12,3),nowDate+(3 * 30 days));
 		walletTokens[airdrop] = WalletTokens((_supply*3)/100,((_supply*3)/100)/2,Vesting(0,0,3,2,1),nowDate+(3 * 30 days));
-		walletTokens[liquidity] = WalletTokens((_supply*7)/100,((_supply*7*25)/10000)/24,Vesting(0,25,0,24,1),nowDate+30 days);
-		walletTokens[liquidity].lockedAmount -= (_supply*7*25)/10000;
-		_mint(liquidity, (_supply*7*25)/10000);
+		walletTokens[liquidity] = WalletTokens((_supply*8)/100,((_supply*8*25)/10000)/24,Vesting(0,25,0,24,1),nowDate+30 days);
+		walletTokens[liquidity].lockedAmount -= (_supply*8*25)/10000;
+		_mint(liquidity, (_supply*8*25)/10000);
 		walletTokens[reward] = WalletTokens((_supply*20)/100,((_supply*20)/10000)/24,Vesting(0,1,4,24,1),nowDate+(4 *30 days));
-		walletTokens[dev] = WalletTokens((_supply*25)/100,((_supply*25)/10000)/24,Vesting(0,0,6,24,1),nowDate+(6 *30 days));
+		walletTokens[dev] = WalletTokens((_supply*20)/100,((_supply*20)/10000)/24,Vesting(0,0,6,24,1),nowDate+(6 *30 days));
 		walletTokens[treasury] = WalletTokens((_supply*5)/100,((_supply*5)/10000)/24,Vesting(0,0,6,24,1),nowDate+(6 *30 days));
-		_mint(sale, (_supply*20)/100);
+		_mint(sale, (_supply*25)/100);
 		_mint(address(this),_supply-totalSupply());
 
     }
